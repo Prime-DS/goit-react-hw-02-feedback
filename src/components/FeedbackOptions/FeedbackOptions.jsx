@@ -4,9 +4,9 @@ import { Btn } from './FeedbackOptions.styled';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
         <div>
-            <Btn type="button" onClick={() => { onLeaveFeedback(options[0]) }}>Good</Btn>
-            <Btn type="button" onClick={() => { onLeaveFeedback(options[1]) }}>Bad</Btn>
-            <Btn type="button" onClick={() => { onLeaveFeedback(options[2]) }}>Neutral</Btn>
+            {options.map((item,index) => {
+                return (<Btn type='button' key={index} onClick={() => { onLeaveFeedback(item) }}>{ item}</Btn>)
+            })}
         </div>
     )
 };
